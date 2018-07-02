@@ -7,6 +7,7 @@ This formula is a base to build your Shibboleth configuration on.  All of the di
 When specific files are changed the serivce that uses that file will be refreshed.  For example, if you update attribute-resolver.xml the AttributeResolverService will be reloaded.  If you add new config files to services via services.xml you'll need to account for them.
 
 ## Pillar Example 
+````
 shibboleth:
   lookup:
     install:
@@ -53,3 +54,4 @@ shibboleth:
         idp.attribute.resolver.LDAP.useStartTLS: '%{idp.authn.LDAP.useStartTLS:true}'
         idp.attribute.resolver.LDAP.trustCertificates: '%{idp.authn.LDAP.trustCertificates:undefined}'
         idp.attribute.resolver.LDAP.searchFilter: '(uid=$resolutionContext.principal)'
+        ````
